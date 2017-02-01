@@ -12,10 +12,17 @@ package ru.coutvv.j8f.defaultmeth;
  * Created by coutvv on 01.02.2017.
  */
 @FunctionalInterface
-public interface MyFunctionalInterface {
+public interface MyFunctionalInterface<T, F> {
 
-    void run();
+    /**
+     * Convert from string to integer
+     * @param from
+     * @return
+     */
+    F run(T from);
+
     default void shit() {
         System.out.println("Some shit stroke");
     }
+
 }
