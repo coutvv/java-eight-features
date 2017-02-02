@@ -2,3 +2,8 @@
 /.gradle
 /build
 /gradle
+/bin/
+/test-output
+/.settings
+.classpath
+.project

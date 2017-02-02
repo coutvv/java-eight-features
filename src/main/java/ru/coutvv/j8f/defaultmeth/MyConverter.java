@@ -12,7 +12,7 @@ package ru.coutvv.j8f.defaultmeth;
  * Created by coutvv on 01.02.2017.
  */
 @FunctionalInterface
-public interface MyFunctionalInterface<T, F> {
+public interface MyConverter<T, F> {
 
     /**
      * Convert from string to integer
@@ -24,5 +24,6 @@ public interface MyFunctionalInterface<T, F> {
     default void shit() {
         System.out.println("Some shit stroke");
     }
+    
 
 }
