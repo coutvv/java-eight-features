@@ -4,7 +4,7 @@ package ru.coutvv.j8f.lambda;
  * Created by coutvv on 01.02.2017.
  */
 
-class Something {
+public class Something {
 
     String firstName, lastName;
     
@@ -23,5 +23,13 @@ class Something {
     public String toString() {
     	return firstName + " " + lastName;
     }
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
 }
 
