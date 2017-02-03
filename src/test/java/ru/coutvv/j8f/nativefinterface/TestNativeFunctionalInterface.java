@@ -6,6 +6,7 @@ import static org.testng.Assert.assertTrue;
 import java.util.Comparator;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -128,6 +129,15 @@ public class TestNativeFunctionalInterface {
 		System.out.println(opt.map(s -> "Hey " + s + "!"));
 
 		System.out.println(opt.orElseGet(() -> "nope"));
+	}
+	
+	/**
+	 * На ввод 2 экземпляра T -- возвращает один T
+	 */
+	@Test
+	public void testBinaryOperator() {
+		BinaryOperator<String> eq = ((s1,s2) -> s1 + " had been fucked " + s2);
+		System.out.println(eq.apply("Jesus", "Mary M"));
 	}
 }
 
