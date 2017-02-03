@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 
 import java.util.Comparator;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -102,11 +103,31 @@ public class TestNativeFunctionalInterface {
 	}
 	
 	/**
+	 * Опциональные значения -- не являются функциональными интерфейсами, 
+	 * однако являются удобным среством предотвращения NullPointerException.
 	 * 
+	 * Опциональные значения -- это по сути контейнер для значения, которое 
+	 * может быть равно null. Например, вам нужен метод, который возвращает 
+	 * какое-то значени, но иногда он должен возвращать пустое значение.
+	 * Вместо того, чтобы возвращать null, в Java 8 можно вернуть опциональное
+	 * значение
 	 */
 	@Test
 	public void testOptional(){
-		//we stop here
+		Optional<String> optional = Optional.of("bam");
+		System.out.println(optional.isPresent());
+		System.out.println(optional.get());
+		System.out.println(optional.orElse("fallback"));
+		optional.ifPresent((s) -> System.out.println(s.charAt(0)));
+		
+
+		Optional<String> opt = Optional.ofNullable(null);
+		opt.orElseGet(() -> "fuck off");
+		System.out.println(opt.orElseGet(() -> "strange"));
+		System.out.println(opt.map(s -> "Hey " + s + "!").orElse("Hey Stranger"));
+		System.out.println(opt.map(s -> "Hey " + s + "!"));
+
+		System.out.println(opt.orElseGet(() -> "nope"));
 	}
 }
 
