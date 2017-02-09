@@ -3,8 +3,10 @@ package ru.coutvv.j8f.stream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -123,6 +125,32 @@ public class TestStream {
 									.noneMatch(s -> s.startsWith("a"));
 		System.out.println(nonStartsWithA);
 	}
-	
-	
+
+	/**
+	 * Операция Count является конечной операцией и возвращает количество элементов
+	 * в потоке. Типом возвращаемого значения является long
+	 */
+	@Test
+	public void testCount() {
+		long startsWithD = stringCollection
+				.stream()
+				.filter((s) -> s.startsWith("d"))
+				.count();
+		Assert.assertEquals(startsWithD, 2L);
+		System.out.println(startsWithD);
+	}
+
+	/**
+	 * Эта конечная операция производит свертку элементов потока по заданной функции
+	 * Результатом является опциональное значение
+	 */
+	@Test
+	public void testReduce() {
+		Optional<String> reduced =
+				stringCollection
+				.stream()
+				.sorted()
+				.reduce((s1, s2) -> s1 + "#" + s2);
+		reduced.ifPresent(System.out::println);
+	}
 }
