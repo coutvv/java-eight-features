@@ -6,6 +6,9 @@ import org.testng.annotations.Test;
 
 import ru.coutvv.j8f.defaultmeth.MyConverter;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 /**
  * Фишки лямбда-выражений
@@ -19,6 +22,16 @@ public class TestLambda {
         Runnable r = () -> System.out.println("hello");
         Thread th = new Thread(r);
         th.start();
+
+        Runnable[] runners = {
+                () -> System.out.println("shit"),
+                () -> System.out.println("fuck off")
+        };
+        useHasmmap(new HashMap<>());//в Java 7 нельзя было(надо было указывать в <> типы)
+    }
+
+    private void useHasmmap(Map<String, String> vals) {
+
     }
 
     @Test
