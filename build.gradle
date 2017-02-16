@@ -15,4 +15,9 @@ test {
 
 dependencies {
     compile group: 'org.testng', name: 'testng', version: '6.10'
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+    // https://mvnrepository.com/artifact/net.jcip/jcip-annotations
+    compile group: 'net.jcip', name: 'jcip-annotations', version: '1.0'
+
 }
