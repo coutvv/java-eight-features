@@ -14,7 +14,7 @@ public class LazyInitRace {
             instance = new ExpensiveObject();
         return instance;
     }
+    private class ExpensiveObject {
+    }
 
-}
-class ExpensiveObject {
 }
