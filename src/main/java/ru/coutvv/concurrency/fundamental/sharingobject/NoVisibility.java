@@ -24,8 +24,8 @@ public class NoVisibility {
     public static void main(String[] args) {
         new ReaderThread().start();
         Util.lag(200);
-        number = 42;
         ready = true;
+        number = 42;
         System.out.println("shit");
     }
 }
