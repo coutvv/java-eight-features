@@ -1,11 +1,14 @@
 package ru.coutvv.concurrency.fundamental.sharingobject;
 
+import jdk.nashorn.internal.ir.annotations.Immutable;
+
 import java.math.BigInteger;
 import java.util.Arrays;
 
 /**
  * Created by coutvv on 23.02.2017.
  */
+@Immutable
 public class OneValueCache {
     private final BigInteger lastNumber;
     private final BigInteger[] lastFactors;
