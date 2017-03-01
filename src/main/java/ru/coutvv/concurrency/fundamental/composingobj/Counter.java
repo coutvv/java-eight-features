@@ -4,7 +4,7 @@ import net.jcip.annotations.GuardedBy;
 import net.jcip.annotations.ThreadSafe;
 
 /**
- * Created by lomovtsevrs on 27.02.2017.
+ * Типичный представитель The Java Monitor Pattern
  */
 @ThreadSafe
 public final class Counter {
