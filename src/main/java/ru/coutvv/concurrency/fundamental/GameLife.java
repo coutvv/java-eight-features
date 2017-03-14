@@ -1,4 +1,4 @@
-package ru.coutvv.concurrency.etc.fundamental;
+package ru.coutvv.concurrency.fundamental;
 
 import java.io.IOException;
 import java.util.Random;
@@ -87,6 +87,8 @@ public class GameLife {
             gl.step();
             gl.showBoard();
         }
+
+
     }
 
 }
